@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Usage Quiz</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #B1D4FB;
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin: 2rem 0;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .option-btn {
+            padding: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            min-width: 100px;
+        }
+
+        .option-btn.selected {
+            background-color: #2ecc71;
+        }
+
+        .option-btn.wrong {
+            background-color: #e74c3c;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            padding: 1.5rem 3rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #e67e22;
+            color: white;
+        }
+
+        #score {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            margin-top: 3rem;
+            font-weight: bold;
+        }
+
+        .result-container {
+            font-size: 1.8rem;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .correct-answer {
+            color: #2ecc71;
+        }
+
+        .wrong-answer {
+            color: #e74c3c;
+        }
+        
+        .noun {
+            font-weight: bold;
+            color: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+<h2 style="text-align:center" onmouseover="this.style.color='Green'" onmouseout="this.style.color='red'">
+Chakdaha Roy Computer Academy :: Call- 7980782551</h2>
+        <div id="question-number"></div>
+        <div class="question">Which article should be used: <span class="noun" id="word"></span>?</div>
+
+        <div class="options-container" id="options"></div>
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prev-btn" onclick="prevQuestion()">Previous</button>
+            <button class="nav-btn" id="end-btn" onclick="endQuiz()">End Quiz</button>
+            <button class="nav-btn" id="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+        <div id="score">Score: 0</div>
+        <div id="results" class="result-container"></div>
+    </div>
